@@ -1,7 +1,11 @@
 INSERT INTO product (product_name, PRODUCT_REF, ¨PRODUCT_AUTOR, PRODUCT_DESCRIPTION, PRODUCT_PICTURE, PRODUCT_STOCK, PRODUCT_PRICE, TYPE_ID,SPL_ID)
 VALUES
-("L'inconnue de la Seine","REF001","Guillaume Musso", "", "REF001picture", "30", "8.90","1","1"),
-("Skidamarink","REF002","Guillaume Musso" ,"","REF002picture", "21", "8.90","1","1"),
+("L'inconnue de la Seine","REF001","Guillaume Musso", "Par une nuit brumeuse de décembre, une jeune femme est repêchée dans la Seine au niveau du Pont-Neuf. Nue, amnésique, mais vivante.
+Très agitée, elle est conduite à l'infirmerie de la préfecture de police de Paris... d\'où elle s'échappe au bout de quelques heures.
+Les analyses ADN et les photos révèlent son identité : il s'agit de la célèbre pianiste Milena Bergman. Mais c'est impossible, car Milena est morte dans un crash d'avion, il y a plus d'un an.
+Rapahël, son ancien fiancé, et Roxane, une flic fragilisée par sa récente mise au placard, se prennent de passion pour cette enquête, bien décidés à éclaircir ce mystère : comment peut-on être à la fois morte et vivante ?
+", "REF001picture", "30", "8.90","1","1"),
+("Skidamarink","REF002","Guillaume Musso" ,"product","REF002picture", "21", "8.90","1","1"),
 ("Marche ou Crève","REF003", "Stephen King","", "REF003picture", "5", "12.90","1","1"),
 ("Le blé en herbe","REF004","Colette","", "REF004picture", "52", "7.90","1","2"),
 ("1991", "REF005","Franck Thilliez","", "REF005picture", "2", "12.90","1","3"),
