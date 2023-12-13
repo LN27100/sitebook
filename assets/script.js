@@ -1,3 +1,5 @@
+// Fonction affichage des données Json toute la collection
+
 function getProduct() {
     return fetch('../assets/data.json')
         .then(response => response.json())
@@ -55,3 +57,7 @@ getProduct()
     .catch(error => {
         console.error('Une erreur s\'est produite :', error);
     });
+
+    // Fonction récupération des données d'URL pour afficher un livre et sa description 
+
+    
