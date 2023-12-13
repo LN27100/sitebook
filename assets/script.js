@@ -46,7 +46,7 @@ function updatePageWithData(data) {
                 <p class="card-stock">Stock : ${product.Stock} unité(s)</p>
                 <p class="card-price">${product.Prix}€</p>
                 <a href="description.html?voirPlus=${encodeURIComponent(JSON.stringify(product))}" class="btn btn-light" id="voirPlus" target="_bank">Voir plus</a>
-                <button data-img="${product.Image}" data-title="${product.Titre}" data-price="${product.Prix}" data-btn = "addCart" class="btn btn-light" >Ajouter au panier</button>
+                <button data-img="${product.Image}" data-title="${product.Titre}" data-price="${product.Prix}" data-btn="addCart" class="btn btn-light" >Ajouter au panier</button>
             `;
 
             // Ajouter le corps de la carte à la carte
@@ -143,7 +143,6 @@ function addToCart(Image, Titre, Prix) {
         cartItems[Titre] = { titre: Titre, prix: Prix, quantity: 1, image: Image };
     }
 
-    console.log(cartItems)
     updateCartDisplay()
 }
 
@@ -152,13 +151,14 @@ function addToCart(Image, Titre, Prix) {
 //  Mise à jour du panier
 function updateCartDisplay() {
 
-
+    console.log('fonction')
     // PAR DEFAUT Réinitialise la liste des éléments du panier et le total
     cartItemsList.innerHTML = '';
     let total = 0;
 
     // Parcoure les éléments du panier et les ajoutent à la liste
     for (const itemKey in cartItems) {
+        console.log('boucle')
         const item = cartItems[itemKey];
         const listItem = document.createElement('div');
         listItem.innerHTML =
@@ -168,21 +168,19 @@ function updateCartDisplay() {
          
             <div class=" col-2 my-auto mx-auto">
                 <p class="text-light">${item.Titre}</p>
-         
-            </div>
-            <div class="  col-2 my-auto mx-auto ">
+
+                </div>
+                <div class="  col-2 my-auto mx-auto ">
                 <p class="text-light">${item.Product}</p>
-         
-            </div>
-            <div class="  col-3 my-auto mx-auto">
+
+                </div>
+                <div class="  col-3 my-auto mx-auto">
                 <input class="quantity-input col-5 text-light" type="number" value="1" min="1">
                 <span class="remove-btn text-light" onclick="removeProduct(2)">Supprimer</span>
-         
+
+                </div>
             </div>
-         
-         
-         </div>`
-        console.log(cartItemsList)
+         `
         cartItemsList.appendChild(listItem);
 
 
