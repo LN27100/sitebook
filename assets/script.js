@@ -1,4 +1,15 @@
-// Fonction affichage des données Json toute la collection
+// CONSTANTES
+
+const cartItemsList = document.getElementById('cartItems');
+const cartTotal = document.getElementById('cartTotal');
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const detailsParam = urlParams.get('voirPlus');
+const resultElement = document.getElementById('products');
+
+
+// FONCTION AFFICHAGE DES DONNEES JSON TOUTE LA COLLECTION 
+
 function getProduct() {
     return fetch('../assets/data.json')
         .then(response => response.json())
@@ -11,7 +22,6 @@ function getProduct() {
 
 // Fonction pour mettre à jour la page avec les données
 function updatePageWithData(data) {
-    const resultElement = document.getElementById('products');
 
     if (resultElement) {
         resultElement.innerHTML = '';
@@ -36,7 +46,6 @@ function updatePageWithData(data) {
                 <p class="card-stock">Stock : ${product.Stock} unité(s)</p>
                 <p class="card-price">${product.Prix}€</p>
                 <a href="description.html?voirPlus=${encodeURIComponent(JSON.stringify(product))}" class="btn btn-light" id="voirPlus" target="_bank">Voir plus</a>
-                <a href="#" class="btn btn-light">Ajouter au panier</a>
                 <button data-img="${product.Image}" data-title="${product.Titre}" data-price="${product.Prix}" data-btn = "addCart" class="btn btn-light" >Ajouter au panier</button>
             `;
 
@@ -54,11 +63,8 @@ function updatePageWithData(data) {
 getProduct()
     .then(data => {
         console.log('Données récupérées avec succès :', data);
- 
-        // Fonction récupération des données d'URL pour afficher un livre et sa description
-        const queryString = window.location.search;
-        const urlParams = new URLSearchParams(queryString);
-        const detailsParam = urlParams.get('voirPlus');
+
+// FONCTION DE RECUPERATION DES DONNEES D'URL POUR AFFICHER UN SEUL LIVRE ET SA DESCRIPTION
 
         if (detailsParam) {
             // Décodage des données JSON
@@ -123,6 +129,7 @@ document.addEventListener('click', function (e) {
 })
 
 
+
 // AJOUTER OU RETIRER UN LIVRE DU PANIER
 let cartItems = {}; // Stocke les éléments du panier //memoire 
 
@@ -137,24 +144,24 @@ function addToCart(Image, Titre, Prix) {
     }
 
     console.log(cartItems)
-    // updateCartDisplay(); // Met à jour l'affichage du panier
+    updateCartDisplay()
 }
 
 
 
-// //  / Mise à jour du panier
+ //  Mise à jour du panier
 function updateCartDisplay() {
-    const cartItemsList = document.getElementById('cartItems');
-    const cartTotal = document.getElementById('cartTotal');
 
-    // Réinitialise la liste des éléments du panier et le total
-    cart.innerHTML = '';
+
+    // PAR DEFAUT Réinitialise la liste des éléments du panier et le total
+    cartItems.innerHTML = '';
     let total = 0;
 
     // Parcoure les éléments du panier et les ajoutent à la liste
     for (const itemKey in cartItems) {
         const item = cartItems[itemKey];
         const listItem = document.createElement('div');
+        listItem.innerHTML = 
 
         `   <div class="product border border- d-flex mt-3" data-id="1">
             <img class="img " src="assets/Pictures/REF020picture.jpg" alt="Product Image">
@@ -174,17 +181,19 @@ function updateCartDisplay() {
             </div>
          
          
-         
          </div>`
+        console.log(cartItemsList)
+        cartItemsList.appendChild(listItem);
 
 
         // listItem.textContent = `${item.Titre} - Quantité: ${item.quantity} - €${item.Prix * item.quantity}; ${item.Titre} - Quantité: ${item.quantity} - €${item.Prix * item.quantity}`;
-        // cartItemsList.appendChild(listItem);
         // total += item.Prix * item.quantity; // Ajoute le prix total pour cet album
     }
 
     // Met à jour le total affiché
     cartTotal.textContent = total.toFixed(2); // Fixe le total à 2 décimales
+
+
 }
 
 

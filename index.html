@@ -65,34 +65,19 @@
         <!-- PANIER COTE -->
         <div id="cart">
             <div class="product border border-light d-flex" data-id="1">
-                <img class="img " src="assets/Pictures/REF002picture.jpg" alt="Product Image">
-
-                <div class="col-2 my-auto mx-auto">
-                    <p class="text-light">TITRE</p>
-
+                <div class="offcanvas-body">
+                    <div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div id="cartItems"></div>
+                                <p class="text-light">Total : €<span id="cartTotal">0.00</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="confirmCommande.html" target="_blank"><button class="btn2">commander</button></a>
                 </div>
-                <div class="ol-2 my-auto mx-auto ">
-                    <p class="text-light">PRIX</p>
-
-                </div>
-                <div class="col-3 my-auto mx-auto">
-                    <input class="quantity-input col-5 text-light" type="number" value="1" min="1">
-                    <span class="remove-btn text-light" onclick="removeProduct(2)">Supprimer</span>
-
-                </div>
+        
             </div>
-
-            <div class="product border border- d-flex mt-3" data-id="1">
-                <img class="img " src="assets/Pictures/REF020picture.jpg" alt="Product Image">
-
-                <div class=" col-2 my-auto mx-auto">
-                    <p class="text-light">TITRE</p>
-
-                </div>
-                <div class="  col-2 my-auto mx-auto ">
-                    <p class="text-light">PRIX</p>
-
-                </div>
                 <div class="  col-3 my-auto mx-auto">
                     <input class="quantity-input col-5 text-light" type="number" value="1" min="1">
                     <span class="remove-btn text-light" onclick="removeProduct(2)">Supprimer</span>
@@ -106,20 +91,7 @@
 
         </div>
 
-        <div class="offcanvas-body">
-            <div>
-                <!-- PANIER -->
-                <div class="row">
-                    <div class="col-md-6">
-                        <ul id="cartItems"></ul>
-                        <p class="text-light">Total : €<span id="cartTotal">0.00</span></p>
-                    </div>
-                </div>
-            </div>
-            <a href="confirmCommande.html" target="_blank"><button class="btn2">commander</button></a>
-        </div>
-
-    </div>
+       
     </div>
 
     <!-- CARROUSSEL -->
