@@ -40,8 +40,12 @@
                     <li class="nav-item">
                         <a class="nav-link active text-light" aria-current="page">Me connecter</a>
                     </li>
+                    <!-- Panier d'achat -->
                     <li class="nav-item">
-                        <a class="nav-link active text-light me-auto" aria-current="page">Mon panier</a>
+                        <a class="nav-link text-light" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
+                            aria-controls="offcanvasExample" t>
+                            Panier
+                        </a>
                     </li>
 
 
@@ -50,20 +54,52 @@
             </div>
         </div>
     </nav>
+    <div class="offcanvas offcanvas-start bg-dark" tabindex="-1" id="offcanvasExample"
+        aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title text-light" id="offcanvasExampleLabel">Votre panier</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div id="cart">
+            <div class="product border border-warning d-flex" data-id="1">
+                <img class="img " src="assets/Pictures/REF002picture.jpg" alt="Product Image">
+                <div class=" border border-light p-4 ">
+                    <p class="text-light">rabia</p>
+                </div>
 
-    <div id=products>
-        <!-- <div class="card" style="width: 18rem;">
-            <img src="" class="card-img-top" alt="">
-            <div class="card-body">
-              <h5 class="card-title"></h5>
-              <p class="card-description"></p>
-              <p class="card-autor"></p>
-              <p class="card-stock"></p>
-              <p class="card-price"></p>
-              <a href="#" class="btn btn-primary"></a>
+
             </div>
-          </div> -->
+
+            <div class="product mt-2" data-id="2">
+                <img class="img" src="assets/Pictures/REF004picture.jpg" alt="Product Image">
+                <div class="product-info text-light">
+                    <p class="fs-6">Description du produit 2</h6>
+                    <p>Prix: $15.00</p>
+                </div>
+                <input class="quantity-input col-1 ms-1" type="number" value="1" min="1">
+                <span class="remove-btn" onclick="removeProduct(2)">Supprimer</span>
+            </div>
+        </div>
+
+        <div class="offcanvas-body">
+            <div>
+                <!-- PANIER -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <ul id="cartItems"></ul>
+                        <p class="text-light">Total : €<span id="cartTotal">0.00</span></p>
+                    </div>
+                </div>
+            </div>
+            <a href="confirmCommande.html" target="_blank"><button class="btn2">commander</button></a>
+        </div>
+
     </div>
+    </div>
+
+
+    <!-- récupération données Json -->
+    <div id=products></div>
 
 
 

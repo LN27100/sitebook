@@ -1,6 +1,27 @@
+/* CSS page Index */
 .img {
     width: 4rem;
     height: auto;
     margin-left: 0.5rem;
     display: inline-block;
+}
+
+
+/* CSS page Toute la collection */
+
+#products {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#products > div {
+    background-color: black;
+    color: white;
+margin: 2rem;
+text-align: left;
+}
+
+#products > div > div > img {
+    height:20rem;
+    width: auto;
 }
