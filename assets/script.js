@@ -170,12 +170,12 @@ function updateCartDisplay() {
                 <p class="text-light">${item.Titre}</p>
 
                 </div>
-                <div class="  col-2 my-auto mx-auto ">
-                <p class="text-light">${item.Product}</p>
+                <div class="col-2 my-auto mx-auto ">
+                <p class="text-light">${item.prix} €</p>
 
                 </div>
-                <div class="  col-3 my-auto mx-auto">
-                <input class="quantity-input col-5 text-light" type="number" value="1" min="1">
+                <div class="col-3 my-auto mx-auto">
+                <input class="quantity-input col-5 text-dark" type="number" value="${item.quantity}" min="1">
                 <span class="remove-btn text-light" onclick="removeProduct(2)">Supprimer</span>
 
                 </div>
