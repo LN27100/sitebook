@@ -159,23 +159,24 @@ function updateCartDisplay() {
     // Parcoure les éléments du panier et les ajoutent à la liste
     for (const itemKey in cartItems) {
         console.log('boucle')
-        const item = cartItems[itemKey];
+        const item = cartItems[itemKey]
+        console.log(item);
         const listItem = document.createElement('div');
         listItem.innerHTML =
 
             `   <div class="product border border- d-flex mt-3" data-id="1">
-            <img class="img " src="assets/Pictures/REF020picture.jpg" alt="Product Image">
+            <img class="img" src="assets/Pictures/${item.image}.jpg" alt="Product Image">
          
-            <div class=" col-2 my-auto mx-auto">
-                <p class="text-light">${item.Titre}</p>
+            <div class="col-2 my-auto mx-auto">
+                <p class="text-light">${item.titre}</p>
 
                 </div>
-                <div class="  col-2 my-auto mx-auto ">
-                <p class="text-light">${item.Product}</p>
+                <div class="col-2 my-auto mx-auto ">
+                <p class="text-light">${item.prix} €</p>
 
                 </div>
-                <div class="  col-3 my-auto mx-auto">
-                <input class="quantity-input col-5 text-light" type="number" value="1" min="1">
+                <div class="col-3 my-auto mx-auto">
+                <input class="quantity-input col-5 text-dark" type="number" value="${item.quantity}" min="1">
                 <span class="remove-btn text-light" onclick="removeProduct(2)">Supprimer</span>
 
                 </div>
