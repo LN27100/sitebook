@@ -1,6 +1,6 @@
 // CONSTANTES
 
-const cartItemsList = document.getElementById('cartItems');
+const cartItemsList = document.getElementById('cart');
 const cartTotal = document.getElementById('cartTotal');
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
@@ -64,7 +64,7 @@ getProduct()
     .then(data => {
         console.log('Données récupérées avec succès :', data);
 
-// FONCTION DE RECUPERATION DES DONNEES D'URL POUR AFFICHER UN SEUL LIVRE ET SA DESCRIPTION
+        // FONCTION DE RECUPERATION DES DONNEES D'URL POUR AFFICHER UN SEUL LIVRE ET SA DESCRIPTION
 
         if (detailsParam) {
             // Décodage des données JSON
@@ -149,21 +149,21 @@ function addToCart(Image, Titre, Prix) {
 
 
 
- //  Mise à jour du panier
+//  Mise à jour du panier
 function updateCartDisplay() {
 
 
     // PAR DEFAUT Réinitialise la liste des éléments du panier et le total
-    cartItems.innerHTML = '';
+    cartItemsList.innerHTML = '';
     let total = 0;
 
     // Parcoure les éléments du panier et les ajoutent à la liste
     for (const itemKey in cartItems) {
         const item = cartItems[itemKey];
         const listItem = document.createElement('div');
-        listItem.innerHTML = 
+        listItem.innerHTML =
 
-        `   <div class="product border border- d-flex mt-3" data-id="1">
+            `   <div class="product border border- d-flex mt-3" data-id="1">
             <img class="img " src="assets/Pictures/REF020picture.jpg" alt="Product Image">
          
             <div class=" col-2 my-auto mx-auto">
