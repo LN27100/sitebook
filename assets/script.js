@@ -64,7 +64,7 @@ getProduct()
     .then(data => {
         console.log('Données récupérées avec succès :', data);
 
-        // FONCTION DE RECUPERATION DES DONNEES D'URL POUR AFFICHER UN SEUL LIVRE ET SA DESCRIPTION
+// FONCTION DE RECUPERATION DES DONNEES D'URL POUR AFFICHER UN SEUL LIVRE ET SA DESCRIPTION
 
         if (detailsParam) {
             // Décodage des données JSON
@@ -148,7 +148,7 @@ function addToCart(Image, Titre, Prix) {
 
 
 
-//  Mise à jour du panier
+ //  Mise à jour du panier
 function updateCartDisplay() {
 
     console.log('fonction')
@@ -158,15 +158,15 @@ function updateCartDisplay() {
 
     // Parcoure les éléments du panier et les ajoutent à la liste
     for (const itemKey in cartItems) {
-        console.log('boucle')
         const item = cartItems[itemKey];
         const listItem = document.createElement('div');
-        listItem.innerHTML =
 
-            `   <div class="product border border- d-flex mt-3" data-id="1">
-            <img class="img " src="assets/Pictures/REF020picture.jpg" alt="Product Image">
-         
-            <div class=" col-2 my-auto mx-auto">
+        listItem.innerHTML = 
+        `
+            <div class="product border border- d-flex mt-3" data-id="1">
+                <img class="img " src="assets/Pictures/REF020picture.jpg" alt="Product Image">
+
+                <div class=" col-2 my-auto mx-auto">
                 <p class="text-light">${item.Titre}</p>
 
                 </div>
