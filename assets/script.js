@@ -192,3 +192,17 @@ function removeProduct(titre) {
         updateCartDisplay();
     }
 }
+
+// function removeProduct(titre) {
+//     const product = cartItems[titre];
+
+//     if (product && product.quantity > 1) {
+//         // Si la quantité est supérieure à 1, décrémentez la quantité
+//         product.quantity--;
+//     } else {
+//         // Sinon, supprimez complètement le produit du panier
+//         delete cartItems[titre];
+//     }
+
+//     updateCartDisplay();
+// }
