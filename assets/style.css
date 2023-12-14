@@ -10,8 +10,10 @@
 /* CSS PAGE TOUTE LA COLLECTION */
 
 #products {
+    justify-content: center;
     display: flex;
     flex-wrap: wrap;
+    gap: 1rem; /* Espacement entre les éléments */
 }
 
 #products>div {
@@ -77,19 +79,71 @@
 
 /* CSS FILTRE */
 
-#productsFiltered1>div {
+#productsFiltered1 {
+    justify-content: center;
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem; 
+}
+
+#productsFiltered1>div {
+    width: 18rem; 
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
     box-shadow: 0px 5px 9px rgba(0, 0, 0, 0.6);
-    width: 40%; 
-    margin: 2rem auto 0 auto;
     padding: 1rem;
     align-items: center;
+    margin-bottom: 1rem; 
 }
 
 #productsFiltered1 > div > img {
-    width: 10rem; 
+    width: 100%; 
     height: auto;
 }
+
+#productsFiltered2 {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem; 
+}
+
+#productsFiltered2>div {
+    width: 18rem; 
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    box-shadow: 0px 5px 9px rgba(0, 0, 0, 0.6);
+    padding: 1rem;
+    align-items: center;
+    margin-bottom: 1rem; 
+}
+
+#productsFiltered2 > div > img {
+    width: 100%; 
+    height: auto;
+}
+
+#productsFiltered3 {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem; 
+}
+
+#productsFiltered3>div {
+    width: 18rem; 
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    box-shadow: 0px 5px 9px rgba(0, 0, 0, 0.6);
+    padding: 1rem;
+    align-items: center;
+    margin-bottom: 1rem; 
+}
+
+#productsFiltered3 > div > img {
+    width: 100%; 
+    height: auto;
+}
+
+/* SCROLLBAR PERSONNALISEE */
+
