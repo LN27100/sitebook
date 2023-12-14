@@ -198,6 +198,14 @@ function showProductDetailsInCard(productDetails) {
     const price = document.createElement('p');
     price.className = 'card-price';
     price.innerText = `${productDetails.Prix}€`;
+    // ajout du bouton "ajouter au panier"
+
+    const btnAdd = document.createElement('button');
+    btnAdd.innerHTML = 'Ajouter au panier';
+    btnAdd.className = 'btn btn-light mt-3'
+    btnAdd.addEventListener('click', function () {
+    });
+    ///////////////////////////////////////////////////////////////
 
     cardDescription.appendChild(title);
     cardDescription.appendChild(reference);
@@ -205,6 +213,7 @@ function showProductDetailsInCard(productDetails) {
     cardDescription.appendChild(author);
     cardDescription.appendChild(stock);
     cardDescription.appendChild(price);
+    cardDescription.appendChild(btnAdd)
 
     card.appendChild(cardImage);
     card.appendChild(cardDescription);
