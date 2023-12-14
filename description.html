@@ -23,7 +23,8 @@
                 <a class="navbar-brand col-lg-3 me-0 text-light" href="index.html">PLUME FUTEE</a>
                 <ul class="navbar-nav col-lg-6 justify-content-lg-center">
                     <li class="nav-item">
-                        <a class="nav-link active text-light" aria-current="page" href="books.html">Toute la collection</a>
+                        <a class="nav-link active text-light" aria-current="page" href="books.html">Toute la
+                            collection</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown"
@@ -47,13 +48,11 @@
                             Panier
                         </a>
                     </li>
-
-
                 </ul>
-
             </div>
         </div>
     </nav>
+
     <div class="offcanvas offcanvas-start bg-dark" tabindex="-1" id="offcanvasExample"
         aria-labelledby="offcanvasExampleLabel">
         <div class="offcanvas-header">
@@ -62,66 +61,38 @@
         </div>
 
         <!-- PANIER COTE -->
-        <div id="cart">
+        <div id="cart" class="scrollbar">
             <div class="product border border-light d-flex" data-id="1">
-                <img class="img " src="assets/Pictures/REF002picture.jpg" alt="Product Image">
+                <div class="offcanvas-body">
+                    <div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="text-light" id="cartItems"></div>
+                            </div>
+                        
+                        </div>
+                        <!-- <p class ="text-light">Total articles: <span id="totalItemsInCart"></span></p> -->
+                         <!-- <p class="text-light">Total du panier : <span id="cartTotal"></span></p> -->
 
-                <div class="col-2 my-auto mx-auto">
-                    <p class="text-light">TITRE</p>
-
-                </div>
-                <div class="ol-2 my-auto mx-auto ">
-                    <p class="text-light">PRIX</p>
-
-                </div>
-                <div class="col-3 my-auto mx-auto">
-                    <input class="quantity-input col-5 text-light" type="number" value="1" min="1">
-                    <span class="remove-btn text-light" onclick="removeProduct(2)">Supprimer</span>
-
-                </div>
-
-
-
-            </div>
-            <div class="product border border- d-flex mt-3" data-id="1">
-                <img class="img " src="assets/Pictures/REF020picture.jpg" alt="Product Image">
-
-                <div class=" col-2 my-auto mx-auto">
-                    <p class="text-light">TITRE</p>
-
-                </div>
-                <div class="  col-2 my-auto mx-auto ">
-                    <p class="text-light">PRIX</p>
-
-                </div>
-                <div class="  col-3 my-auto mx-auto">
-                    <input class="quantity-input col-5 text-light" type="number" value="1" min="1">
-                    <span class="remove-btn text-light" onclick="removeProduct(2)">Supprimer</span>
-
-                </div>
-
-
-
-            </div>
-
-
-        </div>
-
-        <div class="offcanvas-body">
-            <div>
-                <!-- PANIER -->
-                <div class="row">
-                    <div class="col-md-6">
-                        <ul id="cartItems"></ul>
-                        <p class="text-light">Total : €<span id="cartTotal">0.00</span></p>
                     </div>
+
+                    <a href="confirmCommande.html" target="_blank"><button class="btn2">commander</button></a>
                 </div>
+
             </div>
-            <a href="confirmCommande.html" target="_blank"><button class="btn2">commander</button></a>
+            <div class="  col-3 my-auto mx-auto">
+                <input class="quantity-input col-5 text-light" type="number" value="1" min="1">
+                <span class="remove-btn text-light" onclick="removeProduct(2)">Supprimer</span>
+
+            </div>
+
+
+
         </div>
 
+
     </div>
-    </div>
+
 
     <div id="containerForDetails">
         <!-- Ici seront affichés les détails du produit -->

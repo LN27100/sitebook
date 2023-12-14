@@ -61,7 +61,6 @@ function showProductDetailsInCard(productDetails) {
     image.src = `../assets/Pictures/${productDetails.Image}.jpg`;
     image.className = 'mx-auto d-block';
     image.alt = 'Product Image';
-    image.style = 'width: 100%; height: auto; max-width: 200px;';
 
     cardImage.appendChild(image);
 

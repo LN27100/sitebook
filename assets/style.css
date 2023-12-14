@@ -1,4 +1,4 @@
-/* CSS page Index */
+/* CSS PAGE INDEX */
 .img {
     width: 4rem;
     height: auto;
@@ -7,7 +7,7 @@
 }
 
 
-/* CSS page Toute la collection */
+/* CSS PAGE TOUTE LA COLLECTION */
 
 #products {
     display: flex;
@@ -26,7 +26,8 @@
     width: auto;
 }
 
-/* CSS panier */
+
+/* CSS PANIER */
 
 .scrollbar {
     overflow-y: auto; /* Active la scrollbar si le contenu dépasse la hauteur */
@@ -43,4 +44,25 @@
 .scrollbar::-webkit-scrollbar-thumb
 {
 	background-color: #494747;
+}
+
+/* CSS PAGE DESCRIPTION UN LIVRE */
+
+#containerForDetails > div{
+    display: flex;
+    flex-direction:row;
+}
+#containerForDetails > div > div.card-description > h5 {
+    font-weight: bold;
+    font-size: 2rem;
+    text-align: center;
+}
+
+#containerForDetails > div > div.card-description > p.card-price {
+    font-weight: bold;
+}
+
+#containerForDetails > div > div.card-image > img {
+    width: 20rem;
+    height: auto;
 }
