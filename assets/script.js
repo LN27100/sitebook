@@ -198,23 +198,23 @@ document.addEventListener('input', function (e) {
         }
     }
 });
-function removeProduct(titre) {
-    if (cartItems[titre]) {
-        delete cartItems[titre];
-        updateCartDisplay();
-    }
-}
-
 // function removeProduct(titre) {
-//     const product = cartItems[titre];
-
-//     if (product && product.quantity > 1) {
-//         // Si la quantité est supérieure à 1, décrémentez la quantité
-//         product.quantity--;
-//     } else {
-//         // Sinon, supprimez complètement le produit du panier
+//     if (cartItems[titre]) {
 //         delete cartItems[titre];
+//         updateCartDisplay();
 //     }
-
-//     updateCartDisplay();
 // }
+
+function removeProduct(titre) {
+    const product = cartItems[titre];
+
+    if (product && product.quantity > 1) {
+        // Si la quantité est supérieure à 1, décrémentez la quantité
+        product.quantity--;
+    } else {
+        // Sinon, supprimez complètement le produit du panier
+        delete cartItems[titre];
+    }
+
+    updateCartDisplay();
+}
