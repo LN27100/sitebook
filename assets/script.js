@@ -117,7 +117,7 @@ function updatePageWithFilteredProducts(products, categoryId) {
             card.className = 'card m-3';
 
             card.innerHTML = `
-                <img src="${product.Image}" class="card-img-top" alt="${product.Titre}">
+            <img src="../assets/Pictures/${product.Image}.jpg" class="card-img-top" alt="${product.Titre}">
                 <div class="card-body">
                     <h5 class="card-title">${product.Titre}</h5>
                     <p class="card-text">Auteur: ${product.Auteur}</p>
@@ -154,15 +154,15 @@ Promise.all([
     console.error('Une erreur s\'est produite lors de la récupération des ID de catégorie :', error);
 });
 
-// Fonction récupération d'URL pour afficher les détails du produit dans une card
+
+// FONCTION RECUPERATION D'URL POUR AFFICHER LES DETAILS DU PRODUIT DANS UNE CARD
+
 function showProductDetailsInCard(productDetails) {
     const card = document.createElement('div');
     card.className = 'card';
-    card.style = 'display: flex; width: 80%; margin: 20px auto 0 auto; background-color: rgba(0, 0, 0, 0.5); color: white; box-shadow: 0px 5px 9px rgba(0, 0, 0, 0.6);';
 
     const cardImage = document.createElement('div');
     cardImage.className = 'card-image';
-    cardImage.style = 'padding: 10px;';
 
     const image = document.createElement('img');
     image.src = `../assets/Pictures/${productDetails.Image}.jpg`;
@@ -173,7 +173,6 @@ function showProductDetailsInCard(productDetails) {
 
     const cardDescription = document.createElement('div');
     cardDescription.className = 'card-description';
-    cardDescription.style = 'padding: 10px;';
 
     const title = document.createElement('h5');
     title.className = 'card-title';
@@ -198,15 +197,14 @@ function showProductDetailsInCard(productDetails) {
     const price = document.createElement('p');
     price.className = 'card-price';
     price.innerText = `${productDetails.Prix}€`;
-    // ajout du bouton "ajouter au panier"
 
     const btnAdd = document.createElement('button');
     btnAdd.innerHTML = 'Ajouter au panier';
     btnAdd.className = 'btn btn-light mt-3'
     btnAdd.addEventListener('click', function () {
     });
-    ///////////////////////////////////////////////////////////////
 
+    
     cardDescription.appendChild(title);
     cardDescription.appendChild(reference);
     cardDescription.appendChild(description);

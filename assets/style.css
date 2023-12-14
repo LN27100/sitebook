@@ -30,39 +30,66 @@
 /* CSS PANIER */
 
 .scrollbar {
-    overflow-y: auto; /* Active la scrollbar si le contenu dépasse la hauteur */
+    overflow-y: auto;
+    /* Active la scrollbar si le contenu dépasse la hauteur */
 }
 
 
-.scrollbar::-webkit-scrollbar
-{
-	width: 9px;
-	background-color: #959494;
+.scrollbar::-webkit-scrollbar {
+    width: 9px;
+    background-color: #959494;
     border: 2px solid #555555;
 }
 
-.scrollbar::-webkit-scrollbar-thumb
-{
-	background-color: #494747;
+.scrollbar::-webkit-scrollbar-thumb {
+    background-color: #494747;
 }
 
 /* CSS PAGE DESCRIPTION UN LIVRE */
 
-#containerForDetails > div{
+#containerForDetails>div {
     display: flex;
-    flex-direction:row;
+    flex-direction: row;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    box-shadow: 0px 5px 9px rgba(0, 0, 0, 0.6);
+    display: flex;
+    width: 80%;
+    margin: 2rem auto 0 auto;
+    padding: 1rem;
 }
-#containerForDetails > div > div.card-description > h5 {
+
+#containerForDetails>div>div.card-description>h5 {
     font-weight: bold;
     font-size: 2rem;
     text-align: center;
 }
 
-#containerForDetails > div > div.card-description > p.card-price {
+#containerForDetails>div>div.card-description>p.card-price {
     font-weight: bold;
 }
 
-#containerForDetails > div > div.card-image > img {
+#containerForDetails>div>div.card-image>img {
     width: 20rem;
+    height: auto;
+    padding: 10px;
+}
+
+/* CSS FILTRE */
+
+#productsFiltered1>div {
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    box-shadow: 0px 5px 9px rgba(0, 0, 0, 0.6);
+    width: 40%; 
+    margin: 2rem auto 0 auto;
+    padding: 1rem;
+    align-items: center;
+}
+
+#productsFiltered1 > div > img {
+    width: 10rem; 
     height: auto;
 }
