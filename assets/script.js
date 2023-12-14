@@ -51,23 +51,23 @@ function updatePageWithData(data) {
 function showProductDetailsInCard(productDetails) {
     const card = document.createElement('div');
     card.className = 'card';
-    card.style = 'display: flex; width: 80%; margin: 20px auto 0 auto; background-color: rgba(0, 0, 0, 0.5); color: white; box-shadow: 0px 5px 9px rgba(0, 0, 0, 0.6);'; 
+    card.style = 'display: flex; width: 80%; margin: 20px auto 0 auto; background-color: rgba(0, 0, 0, 0.5); color: white; box-shadow: 0px 5px 9px rgba(0, 0, 0, 0.6);';
 
     const cardImage = document.createElement('div');
     cardImage.className = 'card-image';
-    cardImage.style = 'padding: 10px;'; 
+    cardImage.style = 'padding: 10px;';
 
     const image = document.createElement('img');
     image.src = `../assets/Pictures/${productDetails.Image}.jpg`;
     image.className = 'mx-auto d-block';
     image.alt = 'Product Image';
-    image.style = 'width: 100%; height: auto; max-width: 200px;'; 
+    image.style = 'width: 100%; height: auto; max-width: 200px;';
 
     cardImage.appendChild(image);
 
     const cardDescription = document.createElement('div');
     cardDescription.className = 'card-description';
-    cardDescription.style = 'padding: 10px;'; 
+    cardDescription.style = 'padding: 10px;';
 
     const title = document.createElement('h5');
     title.className = 'card-title';
@@ -184,4 +184,11 @@ function updateCartDisplay() {
     cartItemsList.appendChild(cartTotalElement);
 
     cartTotalItems.textContent = `Total articles dans le panier : ${totalItems}`;
+}
+
+function removeProduct(titre) {
+    if (cartItems[titre]) {
+        delete cartItems[titre];
+        updateCartDisplay();
+    }
 }
