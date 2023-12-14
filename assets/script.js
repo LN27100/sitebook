@@ -33,6 +33,7 @@ function updatePageWithData(data) {
                 <img src="../assets/Pictures/${product.Image}.jpg" class="mx-auto d-block" alt="Product Image"></img>
                 <h5 class="card-title">${product.Titre}</h5>
                 <p class="card-autor">Auteur: ${product.Auteur}</p>
+
                 <p class="card-stock">Stock : ${product.Stock} unité(s)</p>
                 <p class="card-price">${product.Prix}€</p>
                 <a href="description.html?voirPlus=${encodeURIComponent(JSON.stringify(product))}" class="btn btn-light" id="voirPlus" target="_blank">Voir plus</a>
@@ -198,12 +199,7 @@ document.addEventListener('input', function (e) {
         }
     }
 });
-// function removeProduct(titre) {
-//     if (cartItems[titre]) {
-//         delete cartItems[titre];
-//         updateCartDisplay();
-//     }
-// }
+
 
 function removeProduct(titre) {
     const product = cartItems[titre];
@@ -218,3 +214,5 @@ function removeProduct(titre) {
 
     updateCartDisplay();
 }
+
+
