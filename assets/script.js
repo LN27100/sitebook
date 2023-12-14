@@ -185,6 +185,7 @@ function updateCartDisplay() {
 
     cartTotalItems.textContent = `Total articles dans le panier : ${totalItems}`;
 }
+
 // Fonction pour mettre à jour la quantité dans le panier
 document.addEventListener('input', function (e) {
     if (e.target.classList.contains('quantity-input')) {
