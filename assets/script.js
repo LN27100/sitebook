@@ -171,7 +171,7 @@ function updateCartDisplay() {
                 <div class="col-3 my-auto mx-auto">
                     <input class="quantity-input col-5 text-dark" type="number" value="${item.quantity}" min="1">
                     <p class="text-light">Total article: ${itemTotal.toFixed(2)}</p>
-                    <span class="remove-btn text-light" onclick="removeProduct('${itemKey}')">Supprimer</span>
+                    <span class="btn remove-btn bg-light" onclick="removeProduct('${itemKey}')">Supprimer</span>
                 </div>
             </div>
             `;
