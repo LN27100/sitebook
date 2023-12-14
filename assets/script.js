@@ -6,17 +6,19 @@ const containerForDetails = document.getElementById('containerForDetails');
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const detailsParam = urlParams.get('voirPlus');
-const resultElementFiltered = document.getElementById('productsFiltered');
+
 
 
 // FONCTION AFFICHAGE DES DONNEES JSON TOUTE LA COLLECTION
-function getProduct() {
-    return fetch('../assets/data.json')
-        .then(response => response.json())
-        .then(data => {
-            updatePageWithData(data);
-            return data;
-        });
+async function getProduct() {
+    try {
+        const response = await fetch('../assets/data.json');
+        const data = await response.json();
+        updatePageWithData(data);
+        return data;
+    } catch (error) {
+        console.error('Erreur lors de la récupération des produits :', error);
+    }
 }
 
 // Fonction pour mettre à jour la page avec les données
@@ -49,28 +51,107 @@ function updatePageWithData(data) {
         console.error('Élément non trouvé');
     }
 }
-// Fonction pour filtrer les produits par catégorie
-function filterProductsByCategory(categoryId) {
-    return fetch('../assets/data.json')
-        .then(response => response.json())
-        .then(data => {
-            const filteredProducts = data.filter(product => product.categoryId === categoryId);
-            updatePageWithData(filteredProducts);
-        })
-        .catch(error => {
-            console.error('Erreur lors du filtrage des produits :', error);
-        });
+
+async function getCategories() {
+    try {
+        const response = await fetch('../assets/categorie.json');
+        const categories = await response.json();
+        return categories;
+    } catch (error) {
+        console.error('Erreur lors de la récupération des catégories :', error);
+        return [];
+    }
 }
 
-// Écouteur d'événement pour les liens de catégorie
-document.querySelectorAll('.dropdown-item').forEach(item => {
-    item.addEventListener('click', function (event) {
-        event.preventDefault();
-        const categoryId = parseInt(event.target.dataset.categoryId);
-        filterProductsByCategory(categoryId);
-    });
+// Fonction pour obtenir l'ID de catégorie à partir du nom de la catégorie
+async function getCategoryId(categoryName) {
+    try {
+        const response = await fetch('../assets/categorie.json');
+        const categories = await response.json();
+        const category = categories.find(cat => cat.Catégorie === categoryName);
+        return category ? category.id : null;
+    } catch (error) {
+        console.error('Erreur lors de la récupération de l\'ID de catégorie :', error);
+        return null;
+    }
+}
+
+// Utilisation de la fonction pour obtenir l'ID de la catégorie souhaitée (par exemple, "Littérature")
+getCategoryId("Littérature").then(categoryId => {
+    console.log('ID de la catégorie "Littérature" récupéré avec succès :', categoryId);
+    // Maintenant, utilisez cet ID pour filtrer les produits dans data.json
+    if (categoryId !== null) {
+        getProductByCategory(categoryId);
+    } else {
+        console.error('La catégorie spécifiée n\'a pas été trouvée.');
+    }
+}).catch(error => {
+    console.error('Une erreur s\'est produite lors de la récupération de l\'ID de catégorie :', error);
 });
 
+// Fonction pour filtrer les produits par catégorie dans data.json et afficher les résultats dans la page
+async function getProductByCategory(categoryId) {
+    try {
+        const response = await fetch('../assets/data.json');
+        const products = await response.json();
+        const filteredProducts = products.filter(product => {
+            return product.Catégorie === categoryId;
+        });
+
+        return filteredProducts;
+    } catch (error) {
+        console.error('Erreur lors de la récupération des produits par catégorie :', error);
+        return [];
+    }
+}
+
+// Fonction pour mettre à jour la page avec les produits filtrés pour une catégorie spécifique
+function updatePageWithFilteredProducts(products, categoryId) {
+    const productsFilteredElement = document.getElementById(`productsFiltered${categoryId}`);
+    if (productsFilteredElement) {
+        productsFilteredElement.innerHTML = ''; // Nettoie le contenu existant de la div
+
+        products.forEach(product => {
+            // Créez des éléments HTML pour chaque produit et ajoutez-les à la div
+            const productElement = document.createElement('div');
+            productElement.className = 'product-item';
+
+            // Construire la structure HTML pour afficher les détails du produit
+            productElement.innerHTML = `
+                <div class="product-details">
+                    <img src="${product.Image}" alt="${product.Titre}" class="product-image">
+                    <h2>${product.Titre}</h2>
+                    <p>Auteur: ${product.Auteur}</p>
+                    <p>Prix: ${product.Prix}€</p>
+                    <!-- Ajoutez d'autres détails du produit ici -->
+                </div>
+            `;
+
+            productsFilteredElement.appendChild(productElement);
+        });
+    } else {
+        console.error(`Élément "productsFiltered${categoryId}" non trouvé.`);
+    }
+}
+
+// Filtrer et afficher les produits pour chaque catégorie
+Promise.all([
+    getCategoryId("Littérature"),
+    getCategoryId("Manga"),
+    getCategoryId("Activités manuelles")
+]).then(categoryIds => {
+    categoryIds.forEach(categoryId => {
+        if (categoryId !== null) {
+            getProductByCategory(categoryId).then(products => {
+                updatePageWithFilteredProducts(products, categoryId);
+            });
+        } else {
+            console.error('La catégorie spécifiée n\'a pas été trouvée.');
+        }
+    });
+}).catch(error => {
+    console.error('Une erreur s\'est produite lors de la récupération des ID de catégorie :', error);
+});
 
 // Fonction récupération d'URL pour afficher les détails du produit dans une card
 function showProductDetailsInCard(productDetails) {
