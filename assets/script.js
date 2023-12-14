@@ -112,22 +112,23 @@ function updatePageWithFilteredProducts(products, categoryId) {
         productsFilteredElement.innerHTML = ''; // Nettoie le contenu existant de la div
 
         products.forEach(product => {
-            // Créez des éléments HTML pour chaque produit et ajoutez-les à la div
-            const productElement = document.createElement('div');
-            productElement.className = 'product-item';
+            // Créez une carte Bootstrap pour chaque produit
+            const card = document.createElement('div');
+            card.className = 'card m-3';
 
-            // Construire la structure HTML pour afficher les détails du produit
-            productElement.innerHTML = `
-                <div class="product-details">
-                    <img src="${product.Image}" alt="${product.Titre}" class="product-image">
-                    <h2>${product.Titre}</h2>
-                    <p>Auteur: ${product.Auteur}</p>
-                    <p>Prix: ${product.Prix}€</p>
+            card.innerHTML = `
+                <img src="${product.Image}" class="card-img-top" alt="${product.Titre}">
+                <div class="card-body">
+                    <h5 class="card-title">${product.Titre}</h5>
+                    <p class="card-text">Auteur: ${product.Auteur}</p>
+                    <p class="card-text">Prix: ${product.Prix}€</p>
                     <!-- Ajoutez d'autres détails du produit ici -->
+                    <!-- Par exemple, un bouton pour voir plus de détails sur le produit -->
+                    <a href="description.html?voirPlus=${encodeURIComponent(JSON.stringify(product))}" class="btn btn-light" target="_blank">Voir plus</a>
                 </div>
             `;
 
-            productsFilteredElement.appendChild(productElement);
+            productsFilteredElement.appendChild(card);
         });
     } else {
         console.error(`Élément "productsFiltered${categoryId}" non trouvé.`);
