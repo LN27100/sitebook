@@ -6,6 +6,8 @@ const containerForDetails = document.getElementById('containerForDetails');
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 const detailsParam = urlParams.get('voirPlus');
+const resultElementFiltered = document.getElementById('productsFiltered');
+
 
 // FONCTION AFFICHAGE DES DONNEES JSON TOUTE LA COLLECTION
 function getProduct() {
@@ -46,6 +48,28 @@ function updatePageWithData(data) {
         console.error('Élément non trouvé');
     }
 }
+// Fonction pour filtrer les produits par catégorie
+function filterProductsByCategory(categoryId) {
+    return fetch('../assets/data.json')
+        .then(response => response.json())
+        .then(data => {
+            const filteredProducts = data.filter(product => product.categoryId === categoryId);
+            updatePageWithData(filteredProducts);
+        })
+        .catch(error => {
+            console.error('Erreur lors du filtrage des produits :', error);
+        });
+}
+
+// Écouteur d'événement pour les liens de catégorie
+document.querySelectorAll('.dropdown-item').forEach(item => {
+    item.addEventListener('click', function(event) {
+        event.preventDefault();
+        const categoryId = parseInt(event.target.dataset.categoryId);
+        filterProductsByCategory(categoryId);
+    });
+});
+
 
 // Fonction récupération d'URL pour afficher les détails du produit dans une card
 function showProductDetailsInCard(productDetails) {
