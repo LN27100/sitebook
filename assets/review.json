@@ -1,0 +1,142 @@
+[
+	{
+		"REVIEW_ID" : 61,
+		"REVIEW_NOTE" : 5,
+		"REVIEW_DESCRIPTION" : "Service excellent, fortement recommandé.",
+		"PRODUCT_ID_" : 1,
+		"USR_ID_" : 11
+	},
+	{
+		"REVIEW_ID" : 62,
+		"REVIEW_NOTE" : 4,
+		"REVIEW_DESCRIPTION" : "Bonne expérience globale. Pourrait s'améliorer dans certains domaines.",
+		"PRODUCT_ID_" : 2,
+		"USR_ID_" : 12
+	},
+	{
+		"REVIEW_ID" : 63,
+		"REVIEW_NOTE" : 3,
+		"REVIEW_DESCRIPTION" : "Service moyen. Place à l'amélioration.",
+		"PRODUCT_ID_" : 3,
+		"USR_ID_" : 13
+	},
+	{
+		"REVIEW_ID" : 64,
+		"REVIEW_NOTE" : 5,
+		"REVIEW_DESCRIPTION" : "Fantastique ! Reviendra certainement.",
+		"PRODUCT_ID_" : 4,
+		"USR_ID_" : 14
+	},
+	{
+		"REVIEW_ID" : 65,
+		"REVIEW_NOTE" : 2,
+		"REVIEW_DESCRIPTION" : "Pas satisfait du service. Doit s'améliorer.",
+		"PRODUCT_ID_" : 4,
+		"USR_ID_" : 12
+	},
+	{
+		"REVIEW_ID" : 66,
+		"REVIEW_NOTE" : 4,
+		"REVIEW_DESCRIPTION" : "Excellent rapport qualité-prix.",
+		"PRODUCT_ID_" : 5,
+		"USR_ID_" : 12
+	},
+	{
+		"REVIEW_ID" : 67,
+		"REVIEW_NOTE" : 3,
+		"REVIEW_DESCRIPTION" : "Expérience correcte, mais pas exceptionnelle.",
+		"PRODUCT_ID_" : 2,
+		"USR_ID_" : 18
+	},
+	{
+		"REVIEW_ID" : 68,
+		"REVIEW_NOTE" : 5,
+		"REVIEW_DESCRIPTION" : "Personnel et installations incroyables.",
+		"PRODUCT_ID_" : 5,
+		"USR_ID_" : 11
+	},
+	{
+		"REVIEW_ID" : 69,
+		"REVIEW_NOTE" : 4,
+		"REVIEW_DESCRIPTION" : "Très satisfait du service.",
+		"PRODUCT_ID_" : 30,
+		"USR_ID_" : 20
+	},
+	{
+		"REVIEW_ID" : 70,
+		"REVIEW_NOTE" : 2,
+		"REVIEW_DESCRIPTION" : "Expérience décevante. Doit être grandement améliorée.",
+		"PRODUCT_ID_" : 1,
+		"USR_ID_" : 19
+	},
+	{
+		"REVIEW_ID" : 71,
+		"REVIEW_NOTE" : 4,
+		"REVIEW_DESCRIPTION" : "Personnel amical et environnement propre.",
+		"PRODUCT_ID_" : 27,
+		"USR_ID_" : 19
+	},
+	{
+		"REVIEW_ID" : 72,
+		"REVIEW_NOTE" : 3,
+		"REVIEW_DESCRIPTION" : "Correct, mais il y a de meilleures options disponibles.",
+		"PRODUCT_ID_" : 14,
+		"USR_ID_" : 16
+	},
+	{
+		"REVIEW_ID" : 73,
+		"REVIEW_NOTE" : 5,
+		"REVIEW_DESCRIPTION" : "Service exceptionnel !",
+		"PRODUCT_ID_" : 2,
+		"USR_ID_" : 15
+	},
+	{
+		"REVIEW_ID" : 74,
+		"REVIEW_NOTE" : 4,
+		"REVIEW_DESCRIPTION" : "Satisfait de l'expérience globale.",
+		"PRODUCT_ID_" : 14,
+		"USR_ID_" : 11
+	},
+	{
+		"REVIEW_ID" : 75,
+		"REVIEW_NOTE" : 3,
+		"REVIEW_DESCRIPTION" : "Service moyen, rien de spécial.",
+		"PRODUCT_ID_" : 29,
+		"USR_ID_" : 15
+	},
+	{
+		"REVIEW_ID" : 76,
+		"REVIEW_NOTE" : 5,
+		"REVIEW_DESCRIPTION" : "Exceptionnel ! Recommanderais à d'autres.",
+		"PRODUCT_ID_" : 17,
+		"USR_ID_" : 20
+	},
+	{
+		"REVIEW_ID" : 77,
+		"REVIEW_NOTE" : 4,
+		"REVIEW_DESCRIPTION" : "Bon service, mais un peu cher.",
+		"PRODUCT_ID_" : 26,
+		"USR_ID_" : 11
+	},
+	{
+		"REVIEW_ID" : 78,
+		"REVIEW_NOTE" : 2,
+		"REVIEW_DESCRIPTION" : "Expérience désagréable. Doit être considérablement améliorée.",
+		"PRODUCT_ID_" : 13,
+		"USR_ID_" : 13
+	},
+	{
+		"REVIEW_ID" : 79,
+		"REVIEW_NOTE" : 4,
+		"REVIEW_DESCRIPTION" : "Content du service fourni.",
+		"PRODUCT_ID_" : 6,
+		"USR_ID_" : 20
+	},
+	{
+		"REVIEW_ID" : 80,
+		"REVIEW_NOTE" : 3,
+		"REVIEW_DESCRIPTION" : "Pourrait être meilleur, mais pas terrible.",
+		"PRODUCT_ID_" : 22,
+		"USR_ID_" : 17
+	}
+]
