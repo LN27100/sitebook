@@ -204,6 +204,8 @@ function showProductDetailsInCard(productDetails) {
     btnAdd.innerHTML = 'Ajouter au panier';
     btnAdd.className = 'btn btn-light mt-3'
     btnAdd.addEventListener('click', function () {
+        addToCart(productDetails.Image, productDetails.Titre, productDetails.Prix);
+
     });
     ///////////////////////////////////////////////////////////////
 
