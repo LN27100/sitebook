@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="assets/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <title>Plume Futée</title>
+    <title>Filtre rechercher</title>
 </head>
 
 <body>
@@ -37,6 +37,8 @@
                             <li><a class="dropdown-item" href="#" data-category="Vie Pratique">Vie Pratique</a></li>
                         </ul>
                     </li>
+                    
+            
                     <li class="nav-item">
                         <a class="nav-link active text-light" aria-current="page">Me connecter</a>
                     </li>
@@ -61,12 +63,43 @@
 
         <!-- PANIER COTE -->
         <div id="cart" class="scrollbar">
-            <!-- Contenu du panier -->
+            <div class="product border border-light d-flex" data-id="1">
+                <div class="offcanvas-body">
+                    <div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="text-light" id="cartItems"></div>
+                            </div>
+
+                        </div>
+                        <!-- <p class ="text-light">Total articles: <span id="totalItemsInCart"></span></p> -->
+                        <!-- <p class="text-light">Total du panier : <span id="cartTotal"></span></p> -->
+
+                    </div>
+
+                    <a href="confirmCommande.html" target="_blank"><button class="btn2">commander</button></a>
+                </div>
+
+            </div>
+            <div class="  col-3 my-auto mx-auto">
+                <input class="quantity-input col-5 text-light" type="number" value="1" min="1">
+                <span class="remove-btn text-light" onclick="removeProduct(2)">Supprimer</span>
+
+            </div>
+
+
+
         </div>
+
+
     </div>
 
-    <!-- Div pour afficher les produits filtrés -->
-    <div id="products"></div>
+
+    </div>
+
+<!-- Div pour afficher les résultats -->
+<div id="products"></div>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"

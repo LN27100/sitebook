@@ -1,0 +1,14 @@
+[
+	{
+		"id" : 1,
+		"Catégorie" : "Littérature"
+	},
+	{
+		"id" : 2,
+		"Catégorie" : "Manga"
+	},
+	{
+		"id" : 3,
+		"Catégorie" : "Activités manuelles"
+	}
+]
