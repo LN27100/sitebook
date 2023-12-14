@@ -64,7 +64,7 @@ function filterProductsByCategory(categoryId) {
 
 // Écouteur d'événement pour les liens de catégorie
 document.querySelectorAll('.dropdown-item').forEach(item => {
-    item.addEventListener('click', function(event) {
+    item.addEventListener('click', function (event) {
         event.preventDefault();
         const categoryId = parseInt(event.target.dataset.categoryId);
         filterProductsByCategory(categoryId);
@@ -116,6 +116,14 @@ function showProductDetailsInCard(productDetails) {
     const price = document.createElement('p');
     price.className = 'card-price';
     price.innerText = `${productDetails.Prix}€`;
+    // ajout du bouton "ajouter au panier"
+
+    const btnAdd = document.createElement('button');
+    btnAdd.innerHTML = 'Ajouter au panier';
+    btnAdd.className = 'btn btn-light mt-3'
+    btnAdd.addEventListener('click', function () {
+    });
+    ///////////////////////////////////////////////////////////////
 
     cardDescription.appendChild(title);
     cardDescription.appendChild(reference);
@@ -123,6 +131,7 @@ function showProductDetailsInCard(productDetails) {
     cardDescription.appendChild(author);
     cardDescription.appendChild(stock);
     cardDescription.appendChild(price);
+    cardDescription.appendChild(btnAdd)
 
     card.appendChild(cardImage);
     card.appendChild(cardDescription);
