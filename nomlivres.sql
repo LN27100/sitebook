@@ -1,8 +1,7 @@
-INSERT INTO product (product_name, PRODUCT_REF, ¨PRODUCT_AUTOR, PRODUCT_DESCRIPTION, PRODUCT_PICTURE, PRODUCT_STOCK, PRODUCT_PRICE, TYPE_ID,SPL_ID)
+INSERT IGNORE INTO product (product_name, PRODUCT_REF, ¨PRODUCT_AUTOR, PRODUCT_DES, PRODUCT_PICTURE, PRODUCT_STOCK, PRODUCT_PRICE, TYPE_ID,SPL_ID)
 VALUES
 ("L'inconnue de la Seine","REF001","Guillaume Musso", "Par une nuit brumeuse de décembre, une jeune femme est repêchée dans la Seine au niveau du Pont-Neuf. Nue, amnésique, mais vivante.
-Très agitée, elle est conduite à l'infirmerie de la préfecture de police de Paris... d\'où elle s'échappe au bout de quelques heures.
-Les analyses ADN et les photos révèlent son identité : il s'agit de la célèbre pianiste Milena Bergman. Mais c'est impossible, car Milena est morte dans un crash d'avion, il y a plus d'un an.
+Très agitée, elle est conduite à l'infirmerie de la préfecture de police de Paris. d\'où elle s'échappe au bout de quelques heures. Les analyses ADN et les photos révèlent son identité : il s'agit de la célèbre pianiste Milena Bergman. Mais c'est impossible, car Milena est morte dans un crash d'avion, il y a plus d'un an.
 Rapahël, son ancien fiancé, et Roxane, une flic fragilisée par sa récente mise au placard, se prennent de passion pour cette enquête, bien décidés à éclaircir ce mystère : comment peut-on être à la fois morte et vivante ?
 ", "REF001picture", "30", "8.90","1","1"),
 ("Skidamarink","REF002","Guillaume Musso" ,"Introuvable depuis des années, le tout premier roman de Guillaume Musso enfin réédité !
@@ -80,6 +79,7 @@ Dans cette bible illustrée :
 •	700 massages et applications illustrés pour vous soigner vite, bien et sans risque, avec les huiles essentielles.
 •	Toutes les idées bien-être pour profiter des huiles essentielles à la maison et vos cosmétiques 100 % naturels.
 •	10 trousses personnalisées, pour avoir toujours sous la main les flacons indispensables : enfants, futures mamans, seniors… à chacun ses  essentiels.
-","REF030picture", "28", "15.90","3","2");
+","REF030picture", "28", "15.90","3","2")
+ON DUPLICATE KEY UPDATE product_name = VALUES(product_name), ¨PRODUCT_AUTOR = VALUES(¨PRODUCT_AUTOR), PRODUCT_DES = VALUES(PRODUCT_DES), PRODUCT_PICTURE = VALUES(PRODUCT_PICTURE), PRODUCT_STOCK = VALUES(PRODUCT_STOCK), PRODUCT_PRICE = VALUES(PRODUCT_PRICE), TYPE_ID = VALUES(TYPE_ID), SPL_ID = VALUES(SPL_ID);
 
 
