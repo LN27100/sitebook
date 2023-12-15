@@ -5,11 +5,12 @@
     margin-left: 0.5rem;
     display: inline-block;
 }
+
 .card-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 5rem; 
+    gap: 5rem;
 }
 
 .card {
@@ -17,15 +18,15 @@
 }
 
 .containerThree {
-    width: auto; 
-    display: flex; 
-    justify-content: space-between; 
+    width: auto;
+    display: flex;
+    justify-content: space-between;
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
     box-shadow: 0px 5px 9px rgba(0, 0, 0, 0.6);
     padding: 1rem;
     align-items: center;
-    margin-bottom: 1rem; 
+    margin-bottom: 1rem;
 }
 
 .card {
@@ -54,7 +55,8 @@
     justify-content: center;
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem; /* Espacement entre les éléments */
+    gap: 1rem;
+    /* Espacement entre les éléments */
 }
 
 #products>div {
@@ -77,7 +79,6 @@
     /* Active la scrollbar si le contenu dépasse la hauteur */
 }
 
-
 .scrollbar::-webkit-scrollbar {
     width: 9px;
     background-color: #959494;
@@ -87,6 +88,7 @@
 .scrollbar::-webkit-scrollbar-thumb {
     background-color: #494747;
 }
+
 
 /* CSS PAGE DESCRIPTION UN LIVRE */
 
@@ -118,27 +120,28 @@
     padding: 10px;
 }
 
+
 /* CSS FILTRE */
 
 #productsFiltered1 {
     justify-content: center;
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem; 
+    gap: 1rem;
 }
 
 #productsFiltered1>div {
-    width: 18rem; 
+    width: 18rem;
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
     box-shadow: 0px 5px 9px rgba(0, 0, 0, 0.6);
     padding: 1rem;
     align-items: center;
-    margin-bottom: 1rem; 
+    margin-bottom: 1rem;
 }
 
-#productsFiltered1 > div > img {
-    width: 100%; 
+#productsFiltered1>div>img {
+    width: 100%;
     height: auto;
 }
 
@@ -146,21 +149,21 @@
     justify-content: center;
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem; 
+    gap: 1rem;
 }
 
 #productsFiltered2>div {
-    width: 18rem; 
+    width: 18rem;
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
     box-shadow: 0px 5px 9px rgba(0, 0, 0, 0.6);
     padding: 1rem;
     align-items: center;
-    margin-bottom: 1rem; 
+    margin-bottom: 1rem;
 }
 
-#productsFiltered2 > div > img {
-    width: 100%; 
+#productsFiltered2>div>img {
+    width: 100%;
     height: auto;
 }
 
@@ -168,21 +171,21 @@
     justify-content: center;
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem; 
+    gap: 1rem;
 }
 
 #productsFiltered3>div {
-    width: 18rem; 
+    width: 18rem;
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
     box-shadow: 0px 5px 9px rgba(0, 0, 0, 0.6);
     padding: 1rem;
     align-items: center;
-    margin-bottom: 1rem; 
+    margin-bottom: 1rem;
 }
 
-#productsFiltered3 > div > img {
-    width: 100%; 
+#productsFiltered3>div>img {
+    width: 100%;
     height: auto;
 }
 
@@ -191,21 +194,20 @@
 ::-webkit-scrollbar-track {
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     background-color: #c4c2c0;
-  }
-  
-  ::-webkit-scrollbar {
+}
+
+::-webkit-scrollbar {
     width: 15px;
-  }
-  
-  ::-webkit-scrollbar-thumb {
+}
+
+::-webkit-scrollbar-thumb {
     border-radius: 10px;
-	background-color: #878686;
+    background-color: #878686;
     border: 2px solid #4a4a4a;
 
-	background-image: -webkit-linear-gradient(90deg,
-											  transparent,
-											  rgba(0, 0, 0, 0.4) 50%,
-											  transparent,
-											  transparent)
+    background-image: -webkit-linear-gradient(90deg,
+            transparent,
+            rgba(0, 0, 0, 0.4) 50%,
+            transparent,
+            transparent)
 }
-  

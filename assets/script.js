@@ -37,7 +37,7 @@ function updatePageWithData(data) {
                 <img src="../assets/Pictures/${product.Image}.jpg" class="mx-auto d-block" alt="Product Image"></img>
                 <h5 class="card-title">${product.Titre}</h5>
                 <p class="card-autor">Auteur: ${product.Auteur}</p>
-
+                <p class="card-note">Note: ${product.Note}/5<p>
                 <p class="card-stock">Stock : ${product.Stock} unité(s)</p>
                 <p class="card-price">${product.Prix}€</p>
                 <a href="description.html?voirPlus=${encodeURIComponent(JSON.stringify(product))}" class="btn btn-light" id="voirPlus" target="_blank">Voir plus</a>
@@ -112,7 +112,7 @@ function updatePageWithFilteredProducts(products, categoryId) {
         productsFilteredElement.innerHTML = ''; // Nettoie le contenu existant de la div
 
         products.forEach(product => {
-            // Créez une carte Bootstrap pour chaque produit
+            // CARD pour chaque produit
             const card = document.createElement('div');
             card.className = 'card m-3';
 
