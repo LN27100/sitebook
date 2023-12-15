@@ -237,14 +237,62 @@ getProduct()
         console.error('Une erreur s\'est produite :', error);
     });
 
+
+//local storage
+document.addEventListener('DOMContentLoaded', function () {
+    // Charger les données du panier depuis localStorage
+    const storedCartItems = localStorage.getItem('cartItems');
+    if (storedCartItems) {
+        cartItems = JSON.parse(storedCartItems);
+        updateCartDisplay(); // Mettre à jour l'affichage avec les données chargées
+    }
+
+    // Ajouter le gestionnaire d'événements pour les clics sur les boutons "addCart"
+    document.addEventListener('click', handleAddToCartClick);
+});
+
+
+
+
+
+
+
 document.addEventListener('click', function (e) {
     if (e.target.dataset.btn === "addCart") {
+
+
+
+
         let img = e.target.dataset.img
         let title = e.target.dataset.title
         let price = e.target.dataset.price
         addToCart(img, title, price)
+
+
     }
 });
+
+
+
+
+
+
+
+
+// Nouvelle fonction pour gérer le clic sur le bouton "addCart"
+function handleAddToCartClick(e) {
+    if (e.target.dataset.btn === "addCart") {
+        let img = e.target.dataset.img;
+        let title = e.target.dataset.title;
+        let price = e.target.dataset.price;
+        addToCart(img, title, price);
+    }
+}
+
+
+
+
+
 
 // AJOUTER OU RETIRER UN LIVRE DU PANIER
 let cartItems = {};
@@ -255,14 +303,24 @@ function addToCart(Image, Titre, Prix) {
 
 
     if (cartItems[Titre]) {
+        // Si l'article est déjà dans le panier, incrémente seulement la quantité
         cartItems[Titre].quantity++;
     } else {
+        // Si l'article n'est pas dans le panier, l'ajoute avec une quantité de 1
         cartItems[Titre] = { titre: Titre, prix: Prix, quantity: 1, image: Image };
     }
 
 
-
+    // Mettre à jour le panier et sauvegarder dans localStorage
     updateCartDisplay();
+    saveCartToLocalStorage();
+}
+
+
+
+function saveCartToLocalStorage() {
+    // Sauvegarder les données du panier dans localStorage
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
 }
 
 
@@ -308,6 +366,9 @@ function updateCartDisplay() {
     cartItemsList.appendChild(cartTotalElement);
 
     cartTotalItems.textContent = `Total articles dans le panier : ${totalItems}`;
+
+    // Sauvegarder les données du panier dans localStorage
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
 }
 
 // Fonction pour mettre à jour la quantité dans le panier
@@ -338,3 +399,6 @@ function removeProduct(titre) {
 
     updateCartDisplay();
 }
+
+
+
