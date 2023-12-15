@@ -200,7 +200,7 @@ function showProductDetailsInCard(productDetails) {
     btnAdd.innerHTML = 'Retour';
     btnAdd.className = 'btn btn-outline-dark btn-center'
     btnAdd.addEventListener('click', function () {
-        addToCart(productDetails.Image, productDetails.Titre, productDetails.Prix);
+        window.location.href = '/books.html'
 
     });
 
