@@ -37,6 +37,7 @@ function updatePageWithData(data) {
                 <img src="../assets/Pictures/${product.Image}.jpg" class="mx-auto d-block" alt="Product Image"></img>
                 <h5 class="card-title">${product.Titre}</h5>
                 <p class="card-autor">Auteur: ${product.Auteur}</p>
+                <p class="card-ref">Ref: ${product.Référence}</p>
                 <p class="card-note">Note: ${product.Note}/5<p>
                 <p class="card-stock">Stock : ${product.Stock} unité(s)</p>
                 <p class="card-price">${product.Prix}€</p>
@@ -121,6 +122,7 @@ function updatePageWithFilteredProducts(products, categoryId) {
                 <div class="card-body">
                     <h5 class="card-title">${product.Titre}</h5>
                     <p class="card-text">Auteur: ${product.Auteur}</p>
+                    <p class="card-ref">Ref: ${product.Référence}</p>
                     <p class="card-note">Note: ${product.Note}/5<p>
                     <p class="card-text">Prix: ${product.Prix}€</p>
                     <a href="description.html?voirPlus=${encodeURIComponent(JSON.stringify(product))}" class="btn btn-outline-dark btn-center" target="_blank">Voir plus</a>
@@ -247,22 +249,13 @@ getProduct()
 document.addEventListener('click', function (e) {
     if (e.target.dataset.btn === "addCart") {
 
-
-
-
         let img = e.target.dataset.img
         let title = e.target.dataset.title
         let price = e.target.dataset.price
         addToCart(img, title, price)
 
-
     }
 });
-
-
-
-
-
 
 
 
@@ -275,7 +268,6 @@ function handleAddToCartClick(e) {
         addToCart(img, title, price);
     }
 }
-
 
 
 
@@ -302,10 +294,6 @@ function addToCart(Image, Titre, Prix) {
     updateCartDisplay();
 
 }
-
-
-
-
 
 
 
