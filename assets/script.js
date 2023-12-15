@@ -206,7 +206,7 @@ function showProductDetailsInCard(productDetails) {
 
     });
 
-    
+
     cardDescription.appendChild(title);
     cardDescription.appendChild(reference);
     cardDescription.appendChild(description);
@@ -251,14 +251,25 @@ document.addEventListener('click', function (e) {
 // AJOUTER OU RETIRER UN LIVRE DU PANIER
 let cartItems = {};
 
+
+//fonction pour ajouter des articles dans le panier 
 function addToCart(Image, Titre, Prix) {
+
+
     if (cartItems[Titre]) {
         cartItems[Titre].quantity++;
     } else {
         cartItems[Titre] = { titre: Titre, prix: Prix, quantity: 1, image: Image };
     }
+
+
+
     updateCartDisplay();
 }
+
+
+
+
 
 function updateCartDisplay() {
     cartItemsList.innerHTML = '';
