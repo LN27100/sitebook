@@ -121,6 +121,7 @@ function updatePageWithFilteredProducts(products, categoryId) {
                 <div class="card-body">
                     <h5 class="card-title">${product.Titre}</h5>
                     <p class="card-text">Auteur: ${product.Auteur}</p>
+                    <p class="card-note">Note: ${product.Note}/5<p>
                     <p class="card-text">Prix: ${product.Prix}€</p>
                     <a href="description.html?voirPlus=${encodeURIComponent(JSON.stringify(product))}" class="btn btn-outline-dark btn-center" target="_blank">Voir plus</a>
                 </div>
@@ -196,17 +197,20 @@ function showProductDetailsInCard(productDetails) {
     price.className = 'card-price';
     price.innerText = `${productDetails.Prix}€`;
 
+    const note = document.createElement('p');
+    note.className = 'card-note';
+    note.innerText = `Note: ${productDetails.Note}/5`;
+
     const btnAdd = document.createElement('button');
     btnAdd.innerHTML = 'Retour';
     btnAdd.className = 'btn btn-outline-dark btn-center'
     btnAdd.addEventListener('click', function () {
         window.location.href = '/books.html'
-
     });
-
 
     cardDescription.appendChild(title);
     cardDescription.appendChild(reference);
+    cardDescription.appendChild(note); 
     cardDescription.appendChild(description);
     cardDescription.appendChild(author);
     cardDescription.appendChild(stock);
