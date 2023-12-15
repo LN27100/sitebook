@@ -122,9 +122,7 @@ function updatePageWithFilteredProducts(products, categoryId) {
                     <h5 class="card-title">${product.Titre}</h5>
                     <p class="card-text">Auteur: ${product.Auteur}</p>
                     <p class="card-text">Prix: ${product.Prix}€</p>
-                    <!-- Ajoutez d'autres détails du produit ici -->
-                    <!-- Par exemple, un bouton pour voir plus de détails sur le produit -->
-                    <a href="description.html?voirPlus=${encodeURIComponent(JSON.stringify(product))}" class="btn btn-light" target="_blank">Voir plus</a>
+                    <a href="description.html?voirPlus=${encodeURIComponent(JSON.stringify(product))}" class="btn btn-outline-dark btn-center" target="_blank">Voir plus</a>
                 </div>
             `;
 
@@ -200,7 +198,7 @@ function showProductDetailsInCard(productDetails) {
 
     const btnAdd = document.createElement('button');
     btnAdd.innerHTML = 'Ajouter au panier';
-    btnAdd.className = 'btn btn-light mt-3'
+    btnAdd.className = 'btn btn-outline-dark btn-center'
     btnAdd.addEventListener('click', function () {
         addToCart(productDetails.Image, productDetails.Titre, productDetails.Prix);
 
@@ -340,5 +338,3 @@ function removeProduct(titre) {
 
     updateCartDisplay();
 }
-
-
