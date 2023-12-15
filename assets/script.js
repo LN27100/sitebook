@@ -197,7 +197,7 @@ function showProductDetailsInCard(productDetails) {
     price.innerText = `${productDetails.Prix}€`;
 
     const btnAdd = document.createElement('button');
-    btnAdd.innerHTML = 'Ajouter au panier';
+    btnAdd.innerHTML = 'Retour';
     btnAdd.className = 'btn btn-outline-dark btn-center'
     btnAdd.addEventListener('click', function () {
         addToCart(productDetails.Image, productDetails.Titre, productDetails.Prix);
@@ -236,23 +236,6 @@ getProduct()
     .catch(error => {
         console.error('Une erreur s\'est produite :', error);
     });
-
-
-//local storage
-document.addEventListener('DOMContentLoaded', function () {
-    // Charger les données du panier depuis localStorage
-    const storedCartItems = localStorage.getItem('cartItems');
-    if (storedCartItems) {
-        cartItems = JSON.parse(storedCartItems);
-        updateCartDisplay(); // Mettre à jour l'affichage avec les données chargées
-    }
-
-    // Ajouter le gestionnaire d'événements pour les clics sur les boutons "addCart"
-    document.addEventListener('click', handleAddToCartClick);
-});
-
-
-
 
 
 
@@ -313,15 +296,10 @@ function addToCart(Image, Titre, Prix) {
 
     // Mettre à jour le panier et sauvegarder dans localStorage
     updateCartDisplay();
-    saveCartToLocalStorage();
+
 }
 
 
-
-function saveCartToLocalStorage() {
-    // Sauvegarder les données du panier dans localStorage
-    localStorage.setItem('cartItems', JSON.stringify(cartItems));
-}
 
 
 
@@ -367,8 +345,6 @@ function updateCartDisplay() {
 
     cartTotalItems.textContent = `Total articles dans le panier : ${totalItems}`;
 
-    // Sauvegarder les données du panier dans localStorage
-    localStorage.setItem('cartItems', JSON.stringify(cartItems));
 }
 
 // Fonction pour mettre à jour la quantité dans le panier
@@ -399,6 +375,5 @@ function removeProduct(titre) {
 
     updateCartDisplay();
 }
-
 
 
