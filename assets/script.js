@@ -315,7 +315,7 @@ function updateCartDisplay() {
             <div class="product border border- d-flex mt-3" data-id="1">
                 <img class="img" src="./assets/Pictures/${item.image}.jpg" alt="Product Image">
                 <div class=" col-2 my-auto mx-auto">
-                    <p class="text-light">${item.titre}</p>
+                    <p class="tittle text-light">${item.titre}</p>
                 </div>
                 <div class="col-2 my-auto mx-auto ">
                     <p class="text-light">${item.prix} €</p>

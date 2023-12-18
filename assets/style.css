@@ -1,4 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+/* font-family: 'Indie Flower', cursive; */
+
+
 /* CSS PAGE INDEX */
+
+#navbarsExample11 > a {
+    font-family: 'Indie Flower', cursive;
+    font-size: 2rem;
+}
+.offre {
+    font-family: 'Indie Flower', cursive;
+}
+
+.sélection {
+    font-family: 'Indie Flower', cursive;
+
+}
 .img {
     width: 4rem;
     height: auto;
@@ -51,6 +68,13 @@
 
 /* CSS PAGE TOUTE LA COLLECTION */
 
+#products > div > div > h5{
+    font-family: 'Indie Flower', cursive;
+    text-align: center;
+    font-weight: bolder;
+    margin-top: 0.5rem;
+}
+
 #products {
     justify-content: center;
     display: flex;
@@ -89,6 +113,12 @@
     background-color: #494747;
 }
 
+.tittle{
+        font-family: 'Indie Flower', cursive;
+    text-align: center;
+    font-weight: bolder;
+    text-align: justify;
+}
 
 /* CSS PAGE DESCRIPTION UN LIVRE */
 
@@ -123,6 +153,28 @@
 
 /* CSS FILTRE */
 
+
+#productsFiltered1 > div> div > h5 {
+    font-family: 'Indie Flower', cursive;
+    text-align: center;
+    font-weight: bolder;
+    margin-top: 0.5rem;
+}
+
+#productsFiltered2 > div> div > h5 {
+    font-family: 'Indie Flower', cursive;
+    text-align: center;
+    font-weight: bolder;
+    margin-top: 0.5rem;
+}
+
+#productsFiltered3 > div> div > h5 {
+    font-family: 'Indie Flower', cursive;
+    text-align: center;
+    font-weight: bolder;
+    margin-top: 0.5rem;
+}
+
 #productsFiltered1 {
     justify-content: center;
     display: flex;
@@ -139,6 +191,10 @@
     align-items: center;
     margin-bottom: 1rem;
 }
+
+     
+      
+
 
 #productsFiltered1>div>img {
     width: 100%;
@@ -183,6 +239,7 @@
     align-items: center;
     margin-bottom: 1rem;
 }
+
 
 #productsFiltered3>div>img {
     width: 100%;
