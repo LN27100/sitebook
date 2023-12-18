@@ -7,12 +7,12 @@
     <link rel="stylesheet" href="assets/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <title>Recherche manga</title>
+    <title>Plume Futée</title>
 </head>
 
 <body>
     <!-- NAV BAR -->
-    <nav class="navbar bg-dark navbar-expand-lg rounded" aria-label="Thirteenth navbar example">
+    <nav class="navbar bg-dark navbar-expand-lg rounded   " aria-label="Thirteenth navbar example">
         <div class="container-fluid">
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample11"
                 aria-controls="navbarsExample11" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,20 +20,23 @@
             </button>
 
             <div class="collapse navbar-collapse d-lg-flex text-light" id="navbarsExample11">
-                <a class="navbar-brand col-lg-3 me-0 text-light" href="index.html">Plume futée</a>
+                <a class="navbar-brand col-lg-3 me-0 text-light" href="index.html">Plume Futée</a>
                 <ul class="navbar-nav col-lg-6 justify-content-lg-center">
                     <li class="nav-item">
                         <a class="nav-link active text-light" aria-current="page" href="books.html">Toute la
                             collection</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
                             Livre par genre
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="litterature.html" data-categoryId="1">Littérature</a></li>
+                            <li><a class="dropdown-item" href="litterature.html" data-categoryId="1">Littérature</a>
+                            </li>
                             <li><a class="dropdown-item" href="manga.html" data-categoryId="2">Manga</a></li>
-                            <li><a class="dropdown-item" href="activitesManuelles.html" data-categoryId="3">Activités manuelles</a></li>
+                            <li><a class="dropdown-item" href="activitesManuelles.html" data-categoryId="3">Activités
+                                    manuelles</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -42,35 +45,70 @@
                     <!-- Panier d'achat -->
                     <li class="nav-item">
                         <a class="nav-link text-light" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
-                            aria-controls="offcanvasExample" t>
+                            aria-controls="offcanvasExample" >
                             Panier
                         </a>
                     </li>
+
                 </ul>
+
             </div>
         </div>
     </nav>
-
     <div class="offcanvas offcanvas-start bg-dark" tabindex="-1" id="offcanvasExample"
         aria-labelledby="offcanvasExampleLabel">
         <div class="offcanvas-header">
-            <h5 class="offcanvas-title text-light" id="offcanvasExampleLabel">Votre panier</h5>
+            <h5 class="pan offcanvas-title text-light" id="offcanvasExampleLabel">Votre panier</h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
 
         <!-- PANIER COTE -->
-        <div id="cart" class="scrollbar">
-            <!-- Contenu du panier -->
+        <div id="cart">
+            <div class="product border border-light d-flex" data-id="1">
+                <div class="offcanvas-body">
+                    <div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div id="cartItems"></div>
+                                <p class="text-light">Total : €<span id="cartTotal">0.00</span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="confirmCommande.html" target="_blank"><button class="btn2">commander</button></a>
+                    <input class="quantity-input col-5 text-light" type="number" value="1" min="1">
+                    <span class="remove-btn text-light" onclick="removeProduct(2)">Supprimer</span>
+                </div>
+
+            </div>
+          
+
+
         </div>
+
     </div>
 
-  <!-- Ajoutez cet élément où vous souhaitez afficher les produits filtrés -->
-  <div id="productsFiltered2"></div>
-  
+    </div>
+
+   
+    <h1>Votre inscription a bien été prise en compte !</h1>
+
+
+
+    
+    <!-- FOOTER -->
+    <div class="bg-dark mt-5 p-2 ">
+        <footer class="p-auto  pt-2 ">
+            <p class="text-center text-light ">©2023 Plume Futée </p>
+        </footer>
+    </div>
+
+
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
-    <script src="./assets/script.js"></script>
+    <script src="assets/script.js"></script>
 </body>
 
 </html>

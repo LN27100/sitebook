@@ -289,3 +289,13 @@ background-color: white;
             transparent,
             transparent)
 }
+
+/* Formulaire connexion */
+
+#button {
+    background-color: black;
+ }
+
+ body > div.container > div > div > div > h1 {
+    font-family: 'Indie Flower', cursive;
+ }

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="assets/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <title>Recherche litterature</title>
+    <title>Plume Futée</title>
 </head>
 
 <body>
@@ -32,9 +32,11 @@
                             Livre par genre
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="litterature.html" data-categoryId="1">Littérature</a></li>
+                            <li><a class="dropdown-item" href="litterature.html" data-categoryId="1">Littérature</a>
+                            </li>
                             <li><a class="dropdown-item" href="manga.html" data-categoryId="2">Manga</a></li>
-                            <li><a class="dropdown-item" href="activitesManuelles.html" data-categoryId="3">Activités manuelles</a></li>
+                            <li><a class="dropdown-item" href="activitesManuelles.html" data-categoryId="3">Activités
+                                    manuelles</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
@@ -43,62 +45,117 @@
                     <!-- Panier d'achat -->
                     <li class="nav-item">
                         <a class="nav-link text-light" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
-                            aria-controls="offcanvasExample" t>
+                            aria-controls="offcanvasExample" >
                             Panier
                         </a>
                     </li>
+
                 </ul>
+
             </div>
         </div>
     </nav>
-
     <div class="offcanvas offcanvas-start bg-dark" tabindex="-1" id="offcanvasExample"
         aria-labelledby="offcanvasExampleLabel">
         <div class="offcanvas-header">
-            <h5 class="offcanvas-title text-light" id="offcanvasExampleLabel">Votre panier</h5>
+            <h5 class="pan offcanvas-title text-light" id="offcanvasExampleLabel">Votre panier</h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
 
         <!-- PANIER COTE -->
-        <div id="cart" class="scrollbar">
+        <div id="cart">
             <div class="product border border-light d-flex" data-id="1">
                 <div class="offcanvas-body">
                     <div>
                         <div class="row">
                             <div class="col-md-6">
-                                <div class="text-light" id="cartItems"></div>
+                                <div id="cartItems"></div>
+                                <p class="text-light">Total : €<span id="cartTotal">0.00</span></p>
                             </div>
-                        
                         </div>
-                        <!-- <p class ="text-light">Total articles: <span id="totalItemsInCart"></span></p> -->
-                         <!-- <p class="text-light">Total du panier : <span id="cartTotal"></span></p> -->
-
                     </div>
-
                     <a href="confirmCommande.html" target="_blank"><button class="btn2">commander</button></a>
+                    <input class="quantity-input col-5 text-light" type="number" value="1" min="1">
+                    <span class="remove-btn text-light" onclick="removeProduct(2)">Supprimer</span>
                 </div>
 
             </div>
-            <div class="  col-3 my-auto mx-auto">
-                <input class="quantity-input col-5 text-light" type="number" value="1" min="1">
-                <span class="remove-btn text-light" onclick="removeProduct(2)">Supprimer</span>
-
-            </div>
-
+          
 
 
         </div>
 
+    </div>
 
     </div>
 
-<!-- Ajoutez cet élément où vous souhaitez afficher les produits filtrés -->
-<div id="productsFiltered1"></div>
+   
+    <div class="container">
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-6">
+                <div class="shadow-lg p-4 rounded">
+                    <h1 class=" inscription text-center">Je m'inscris</h1>
+                    <form action="HTML/search.html">
+                        <div class="mb-3">
+                            <label for="nom" class="texte form-label">Nom</label>
+                            <input type="text" class="form-control" id="nom" placeholder="Pierre GIRAUD" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="email" class="texte form-label">E-mail</label>
+                            <input type="email" class="form-control" id="email" placeholder="pierre.giraud@edhec.com"
+                                required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="genre" class="texte form-label">Genre</label>
+                            <select id="genre" class="textInv form-select">
+                                <option value="">Choisissez votre genre</option>
+                                <option value="homme">Homme</option>
+                                <option value="femme">Femme</option>
+                            </select>
+                        </div>
+
+
+                        <div class="texte form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="majeur" disa required>
+                            <label class="form-check-label" for="majeur">
+                                Je suis majeur(e)
+                            </label>
+                        </div>
+                        <div class="texte form-check">
+                            <input  class="form-check-input" type="checkbox" value="" id="cgu" required>
+                            <label class="form-check-label" for="cgu">
+                                J'accepte les conditions d'utilisation
+                            </label>
+                        </div>
+
+                        <button id="button" disabled type="submit"  class="btn btn-primary">Soumettre</button>
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    
+    <!-- FOOTER -->
+    <div class="bg-dark mt-5 p-2 ">
+        <footer class="p-auto  pt-2 ">
+            <p class="text-center text-light ">©2023 Plume Futée </p>
+        </footer>
+    </div>
+
+
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
-    <script src="./assets/script.js"></script>
+    <script src="assets/script.js"></script>
 </body>
 
 </html>
