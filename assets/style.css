@@ -4,6 +4,10 @@
 
 /* CSS PAGE INDEX */
 
+body > nav > div > button > span {
+background-color: white;
+}
+
 #navbarsExample11 > a {
     font-family: 'Indie Flower', cursive;
     font-size: 2rem;
